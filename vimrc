@@ -2,11 +2,11 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
 
   " Required:
-  set runtimepath+=/home/klemens/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('/home/klemens/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -21,7 +21,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Valloric/YouCompleteMe', {
       \ 'build' : {
-      \     'unix' : './install.sh --clang-completer --system-clang',
+      \     'unix' : './install.sh --clang-completer --system-libclang',
       \    },
       \ }
 
