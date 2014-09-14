@@ -5,6 +5,9 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" enable submodule support
+let g:neobundle#types#git#enable_submodule = 1
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle'))
 
@@ -169,9 +172,6 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 set backspace=2 " make backspace work like most other apps (indent,eol,start)
-
-" allow buffer switching on unsaved buffers
-set hidden
-
-" show line and column number
-set ruler
+set hidden " allow buffer switching on unsaved buffers
+set ruler " show line and column number
+set noswapfile nobackup nowritebackup autoread  " no backups and auto-read
