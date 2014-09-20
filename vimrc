@@ -39,7 +39,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 
-NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'vim-scripts/a.vim', { 'rev' : 'tags/2.14' }
 NeoBundle 'vim-scripts/The-NERD-Commenter'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'craigemery/vim-autotag'
