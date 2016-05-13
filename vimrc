@@ -3,10 +3,15 @@ if has('vim_starting')
 
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=/sbin " YouCompleteMe setup calls /sbin/ldconfig
 endif
 
 " enable submodule support
-let g:neobundle#types#git#enable_submodule = 1
+"let g:neobundle#types#git#enable_submodule = 1
+let g:neobundle#install_process_timeout = 1500
+"let g:ycm_python_binary_path = '/usr/bin/python'
+
+set rtp+=~/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle'))
@@ -22,12 +27,6 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Valloric/YouCompleteMe', {
-      \ 'build' : {
-      \     'unix' : './install.sh --clang-completer --system-libclang',
-      \    },
-      \ }
-
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 NeoBundle 'Shougo/vimproc.vim', {
@@ -39,10 +38,24 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 
+NeoBundle 'Valloric/YouCompleteMe', {
+      \ 'build' : {
+      \     'unix' : './install.py --tern-completer --clang-completer --system-libclang',
+      \    },
+      \ }
 NeoBundle 'vim-scripts/a.vim', { 'rev' : 'tags/2.14' }
 NeoBundle 'vim-scripts/The-NERD-Commenter'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'craigemery/vim-autotag'
+NeoBundle 'nvie/vim_bridge'
+NeoBundle 'nvie/vim-rst-tables'
+NeoBundle 'ternjs/tern_for_vim', {
+      \ 'build' : {
+      \     'unix' : 'npm install',
+      \    },
+      \ }
+
+
 "NeoBundle 'vim-scripts/CycleColor'
 
 " Required:
@@ -175,3 +188,6 @@ set backspace=2 " make backspace work like most other apps (indent,eol,start)
 set hidden " allow buffer switching on unsaved buffers
 set ruler " show line and column number
 set noswapfile nobackup nowritebackup autoread  " no backups and auto-read
+set linebreak
+
+let tern#is_show_argument_hints_enabled=1
