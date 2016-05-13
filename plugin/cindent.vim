@@ -23,8 +23,18 @@ function! PyIndent()
     match rightMargin /.\%>81v/
 endf
 
+function! JSIndent()
+    setlocal cinoptions=
+    setlocal shiftwidth=2
+    setlocal tabstop=2
+    setlocal expandtab
+    highlight rightMargin term=bold ctermfg=red guifg=red
+    match rightMargin /.\%>81v/
+endf
+
 if has("autocmd")
     au FileType c,cpp call CIndent()
     au FileType python call PyIndent()
+    au FileType javascript call JSIndent()
 endif
 
