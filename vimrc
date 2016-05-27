@@ -54,6 +54,7 @@ NeoBundle 'ternjs/tern_for_vim', {
       \     'unix' : 'npm install',
       \    },
       \ }
+NeoBundle 'editorconfig/editorconfig-vim'
 
 
 "NeoBundle 'vim-scripts/CycleColor'
