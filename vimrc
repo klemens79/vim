@@ -40,7 +40,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 NeoBundle 'Valloric/YouCompleteMe', {
       \ 'build' : {
-      \     'unix' : './install.py --tern-completer --clang-completer --system-libclang',
+      \     'unix' : './install.py --tern-completer --clang-completer',
       \    },
       \ }
 NeoBundle 'vim-scripts/a.vim', { 'rev' : 'tags/2.14' }
@@ -57,6 +57,7 @@ NeoBundle 'ternjs/tern_for_vim', {
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'jparise/vim-graphql'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'vim-airline/vim-airline'
 
 
 "NeoBundle 'vim-scripts/CycleColor'
@@ -197,9 +198,9 @@ let tern#is_show_argument_hints_enabled=1
 
 " settings for syntastic
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
